@@ -26,8 +26,10 @@ STYLE = """
     }
 """
 
+
 def held(key):
-    return { "key": key, "class": "held" }
+    return {"key": key, "class": "held"}
+
 
 KEYMAP = [
     {
@@ -39,12 +41,9 @@ KEYMAP = [
         "right": [
             ["j", "l", "u", "y", "'"],
             ["h", "n", "e", "i", "o"],
-            ["k", "m", ",", ".", "/"],
+            ["k", "m", ",", ".", ";"],
         ],
-        "thumbs": {
-            "left": ["nav", "shift"],
-            "right": ["space", "sym"],
-        },
+        "thumbs": {"left": ["nav", "shift"], "right": ["space", "sym"],},
     },
     {
         "left": [
@@ -55,28 +54,22 @@ KEYMAP = [
         "right": [
             ["^", ")", "}", "]", "`"],
             ["#", "cmd", "alt", "ctrl", "shift"],
-            ["", "&amp;", ";", ":", "!"],
+            ["", "/", "&amp;", "?", "!"],
         ],
-        "thumbs": {
-            "left": ["nav", "shift"],
-            "right": ["space", held("sym")],
-        },
+        "thumbs": {"left": ["nav", "shift"], "right": ["space", held("sym")],},
     },
     {
         "left": [
             ["tab", "swap win", "tab left", "tab right", "vol up"],
             ["shift", "ctrl", "alt", "cmd", "vol down"],
-            ["space left" , "space right", "back", "fwd", "play"],
+            ["space left", "space right", "back", "fwd", "play"],
         ],
         "right": [
             ["reset", "home", "up", "end", "del"],
             ["caps lock", "left", "down", "right", "bspc"],
             ["", "page down", "page up", "swap lang", "enter"],
         ],
-        "thumbs": {
-            "left": [held("nav"), "shift"],
-            "right": ["space", "sym"],
-        },
+        "thumbs": {"left": [held("nav"), "shift"], "right": ["space", "sym"],},
     },
     {
         "left": [
@@ -105,6 +98,7 @@ LAYER_H = HAND_H
 BOARD_W = LAYER_W + 2 * OUTER_PAD_W
 BOARD_H = 4 * LAYER_H + 5 * OUTER_PAD_H
 
+
 def print_key(x, y, key):
     key_class = ""
     if type(key) is dict:
@@ -121,33 +115,31 @@ def print_key(x, y, key):
         )
         y += LINE_SPACING
 
+
 def print_row(x, y, row):
     for key in row:
         print_key(x, y, key)
         x += KEYSPACE_W
+
 
 def print_block(x, y, block):
     for row in block:
         print_row(x, y, row)
         y += KEYSPACE_H
 
+
 def print_layer(x, y, layer):
     print_block(x, y, layer["left"])
     print_block(
-        x + HAND_W + OUTER_PAD_W,
-        y,
-        layer["right"],
+        x + HAND_W + OUTER_PAD_W, y, layer["right"],
     )
     print_row(
-        x + 3 * KEYSPACE_W,
-        y + 3 * KEYSPACE_H,
-        layer["thumbs"]["left"],
+        x + 3 * KEYSPACE_W, y + 3 * KEYSPACE_H, layer["thumbs"]["left"],
     )
     print_row(
-        x + HAND_W + OUTER_PAD_W,
-        y + 3 * KEYSPACE_H,
-        layer["thumbs"]["right"],
+        x + HAND_W + OUTER_PAD_W, y + 3 * KEYSPACE_H, layer["thumbs"]["right"],
     )
+
 
 def print_board(x, y, keymap):
     x += OUTER_PAD_W
@@ -155,6 +147,7 @@ def print_board(x, y, keymap):
         y += OUTER_PAD_H
         print_layer(x, y, layer)
         y += LAYER_H
+
 
 print(
     f'<svg width="{BOARD_W}" height="{BOARD_H}" viewBox="0 0 {BOARD_W} {BOARD_H}" xmlns="http://www.w3.org/2000/svg">'
