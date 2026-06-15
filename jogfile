@@ -1,0 +1,7 @@
+build
+    jsq -J '({ profiles: [{
+        complex_modifications: { rules: [{ eval_js: $ }] },
+        name: "Default profile",
+        selected: true,
+        virtual_hid_keyboard: { keyboard_type_v2: "ansi" },
+    }] })' karabiner.js > ~/.config/karabiner/karabiner.json
