@@ -57,10 +57,10 @@ modifiers.
   `b` or `b` modified by `a`?
 - Chording -- same timing issues as mod-tap. If you roll quickly from `a` to `b` then is that
   supposed to be `a` then `b` or the `a` + `b` chord?
-- Oneshot mods ([my previously proposed method][]) -- solves the timing issues with mod-tap and
-  chords, but at the expense of being slower in general. It turns what could be a single fluid
-  movement into two distinct movements. This is most egregious when making multiple keypresses while
-  "holding" the same modifiers, requiring you to re-activate the modifiers for each keypress.
+- Oneshot mods / "callum mods" ([my previously proposed method][]) -- solve the timing issues with
+  mod-tap and chords, but at the expense of being slower in general. It turns what could be a single
+  fluid movement into two distinct movements. This is most egregious when making multiple keypresses
+  while "holding" the same modifiers, requiring you to re-activate the modifiers for each keypress.
 
 After some experimentation I think I've found a solution that relies on purely the oldest
 keyboard trick in the book: the humble layer (with an extremely minor twist).
