@@ -57,10 +57,10 @@ modifiers.
   `b` or `b` modified by `a`?
 - Chording -- same timing issues as mod-tap. If you roll quickly from `a` to `b` then is that
   supposed to be `a` then `b` or the `a` + `b` chord?
-- Oneshot mods -- solves the timing issues with mod-tap and chords, but at the expense of being
-  slower in general. It turns what could be a single fluid movement in to two distinct movements.
-  This is most egregious when making multiple keypresses while "holding" the same modifiers,
-  requiring repeatedly activating the mod again for each keypress.
+- Oneshot mods ([my previously proposed method][]) -- solves the timing issues with mod-tap and
+  chords, but at the expense of being slower in general. It turns what could be a single fluid
+  movement into two distinct movements. This is most egregious when making multiple keypresses while
+  "holding" the same modifiers, requiring you to re-activate the modifiers for each keypress.
 
 After some experimentation I think I've found a solution that relies on purely the oldest
 keyboard trick in the book: the humble layer (with an extremely minor twist).
@@ -68,11 +68,11 @@ keyboard trick in the book: the humble layer (with an extremely minor twist).
 ### Half-layer mods
 
 The minor twist is to make use of what I'm going to call **half-layers** -- layers that can be
-activated on each half of the keyboard independently. `sym` above consists of two half-layers.
-Holding `left sym` activates just the left half, and holding `right sym` activates just the right
-half. Both halves have home row modifiers, so to modify a key on the left half of `base` we can use
-`right sym` without covering the key we want to modify (e.g. `cmd` + `c` becomes `right sym` + `cmd`
-\+ `c`).
+activated on each half of the keyboard independently. `sym` above consists of two half-layers, with
+a key on each thumb. Holding `left sym` activates just the left half, and holding `right sym`
+activates just the right half. Both halves have home row modifiers, so to modify a key on the left
+half of `base` we can use `right sym` without obscuring the key we want to modify (e.g. `cmd` + `c`
+becomes `right sym` + `right cmd` + `c`).
 
 ```
   ╭              ┌─────┐                                ┌─────┐              ╮
@@ -88,7 +88,7 @@ half. Both halves have home row modifiers, so to modify a key on the left half o
 ```
 
 To modify a key on `sym` we can activate both half layers and use the modifiers on the other half.
-e.g. `&` becomes `left sym` + `shift` + `right sym` + `7`.
+e.g. `&` becomes `left sym` + `left shift` + `right sym` + `7`.
 
 ```
   ╭              ┌─────┐                                ┌─────┐              ╮
@@ -102,3 +102,5 @@ e.g. `&` becomes `left sym` + `shift` + `right sym` + `7`.
   │  └─────┘              │╳╳╳╳╳│     │  │     │╳╳╳╳╳│              └─────┘  │
   ╰                       └─────┴─────┘  └─────┴─────┘                       ╯
 ```
+
+[my previously proposed method]: https://github.com/callum-oakley/qmk_firmware/blob/master/users/callum
