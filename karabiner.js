@@ -1,3 +1,16 @@
+// This is a slightly cursed implementation for a Macbook keyboard using Karabiner-Elements[0].
+// Slightly cursed because it uses left alt and left command as the left thumb keys, and spacebar
+// and right command as the right thumb keys, resulting in some pretty major thumb contortions. I
+// wouldn't recommend it.
+//
+// To install either copy and paste in to "Complex Modifications" > "Add your own rule using
+// JavaScript" or run `jog build` after installing jog[1] and jsq[2].
+//
+// WARNING `jog build` will replace your `karabiner.json` so avoid if you're using Karabiner for
+// anything else.
+//
+// [0] https://karabiner-elements.pqrs.org/
+
 function map(from, to, opts) {
   const manipulator = {
     type: "basic",
