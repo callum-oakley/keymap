@@ -78,6 +78,7 @@ function map(from, to, opts) {
     map("f", "left_shift", { layer: "left_sym" }),
     map("g", "escape", { layer: "left_sym" }),
 
+    map("z", "caps_lock", { layer: "left_sym" }),
     map("x", "grave_accent_and_tilde", { layer: "left_sym" }),
     map("c", "hyphen", { layer: "left_sym" }),
     map("v", "equal_sign", { layer: "left_sym" }),
