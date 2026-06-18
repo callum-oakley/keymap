@@ -98,7 +98,7 @@ e.g. `&` becomes `left sym` + `left shift` + `right sym` + `7`.
   │  ├─────┤ alt ├─────┤╳╳╳╳╳│ esc │        │ esc │shift├─────┤ alt ├─────┤  │
   │  │ctrl ├─────┤  -  ├─────┼─────┤        ├─────┼─────┤  ]  ├─────┤ctrl │  │
   │  ├─────┤  `  ├─────┤  =  │     │        │     │  [  ├─────┤  ;  ├─────┤  │
-  │  │     ├─────┘     └──┬──┴──┬──┴──┐  ┌──┴──┬──┴──┬──┘     └─────┤  \  │  │
+  │  │caps ├─────┘     └──┬──┴──┬──┴──┐  ┌──┴──┬──┴──┬──┘     └─────┤  \  │  │
   │  └─────┘              │╳╳╳╳╳│     │  │     │╳╳╳╳╳│              └─────┘  │
   ╰                       └─────┴─────┘  └─────┴─────┘                       ╯
 ```
@@ -109,4 +109,10 @@ each hand, rolling quickly from the thumb press in to the finger press:
 - Left hand holds `left sym` and then `left shift` in one rolling motion.
 - Immediately following, right hand holds `right sym` and then hits `7` in one rolling motion.
 
+## Implementation
+
+I'm currently running this on a [Ferris][]. You can see my `keymap.c` [here][keymap.c].
+
 [my previously proposed method]: https://github.com/callum-oakley/qmk_firmware/blob/master/users/callum
+[Ferris]: https://github.com/pierrechevalier83/ferris
+[keymap.c]: https://github.com/callum-oakley/vial-qmk/blob/r2g-callum/keyboards/mechboards/ferris/r2g/keymaps/callum/keymap.c
